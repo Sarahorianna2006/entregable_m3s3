@@ -1,0 +1,19 @@
+{
+  "Productos": [
+    {
+      "id": "1",
+      "nombre": "Lapto",
+      "precio": 1500
+    },
+    {
+      "id": "2",
+      "nombre": "Teclado",
+      "precio": 120
+    },
+    {
+      "id": "3",
+      "nombre": "Monitor",
+      "precio": 90
+    }
+  ]
+}

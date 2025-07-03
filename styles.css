@@ -1,0 +1,10 @@
+button {
+border-radius: 50px;
+border-color: rgb(112, 112, 190);
+
+}
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
