@@ -4,7 +4,8 @@
   "description": "",
   "main": "gestion_api.js",
   "scripts": {
-    "start": "node gestion_api.js",
+    "dev": "vite",
+    "start": "json-server db.json & npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +14,8 @@
   "type": "commonjs",
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "vite": "^7.0.2"
   }
 }

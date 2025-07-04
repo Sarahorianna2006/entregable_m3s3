@@ -7,17 +7,17 @@ function validarProducto(producto) {
     return true;
 }
 
-
-//Lectura de datos (GET), imprime todos los productos disponibles
+//Lectura de datos (GET),muestra los productos disponibles
 function obtenerProductos() {
     fetch(`http://localhost:3000/Productos`)
         .then(response => response.json())
+        //Muestra datos en consola
         .then(data => console.log("Productos disponibles: ", data))
+        //Manejo de errores
         .catch(error => console.error("Error al obtener productos: ", error));
 }
 
-
-//Creación de nuevos datos (POST)
+//Creación de nuevos datos (POST), añade productos
 async function crearProducto(producto) {
     if (!validarProducto(producto))
         return;
@@ -29,15 +29,15 @@ async function crearProducto(producto) {
         body: JSON.stringify(producto)
     })
     .then(res => res.json())
+    //Muestra datos en consola
     .then(data => {console.log("Producto agregado: ", data)})
+    //Manejo de errores
     .catch(error => console.error("Error al agregar producto: ", error));
 }
 
-
-//Actialización de datos (PUT)
+//Actialización de datos (PUT), actualiza 1 producto disponible
 function actualizarProducto(id, productoActualizado){
-    if (!validarProducto(productoActualizado))
-        return;
+    if (!validarProducto(productoActualizado)) return
 
     fetch(`http://localhost:3000/Productos/${id}`, {
         method : 'PUT',
@@ -45,20 +45,25 @@ function actualizarProducto(id, productoActualizado){
         body : JSON.stringify(productoActualizado)
     })
     .then(res => res.json())
+    //Muestra datos en consola
     .then(data => console.log("Producto actualizado: ", data))
+    //Manejo de errores
     .catch(error => console.error("Error al actualizar producto: ", error));
 }
 
-
-//Eliminación de datos (DELETE)
+//Eliminación de datos (DELETE),Eliminar 1 producto disponible
 function eliminarProducto(id) {
-   fetch(`http://localhost:3000/Productos/${id}`, {
-    method: 'DELETE'}) 
-    .then(() => console.log("Producto eliminado"))
-    .catch(error => console.error("Error al eliminar producto: ". error));
+    fetch(`http://localhost:3000/Productos/${id}`, { method: 'DELETE' }) 
+        .then(res => res.json())
+        //Muestra datos en consola
+        .then(data=> console.log("Producto eliminado: ", data))
+        //Manejo de errores
+        .catch(error => console.error("Error al eliminar producto: ", error));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* /// POST  /// */
     const addForm = document.getElementById('formulario_añadir');
 
     addForm.addEventListener('submit', (e) => {
@@ -86,8 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     /* /// PUT /// */
-
-
     const updateForm = document.getElementById('formulario_actualizar');
 
     updateForm.addEventListener('submit', (e) => {
@@ -100,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const obj = {
             nombre : addName.value,
             precio : addPrice.value * 1
-
         }
 
         actualizarProducto(addUpdate.value,obj);

@@ -7,34 +7,41 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <main class="contenedor_principal">
 
-    <section>
-        <h2>Método GET</h2>
-        <button type="button" onclick="obtenerProductos()">Obtener lista de productos</button>
-    </section>
+        <!--Botón para mostrar todos los productos disponibles-->
+        <section>
+            <h2>Método GET</h2>
+            <button type="button" onclick="obtenerProductos()">Obtener lista de productos</button>
+        </section>
 
-    <form id="formulario_añadir">
-        <h2>Método POST</h2>
-        <input id="añadir_input" type="text" placeholder="Nombre del producto">
-        <input id="añadir_precio" type="number" placeholder="Precio del producto">
-        <button type="submit">Añadir</button>
-    </form>
+        <!--Formulario para añadir productos-->
+        <form id="formulario_añadir">
+            <h2>Método POST</h2>
+            <input id="añadir_input" type="text" placeholder="Nombre del producto">
+            <input id="añadir_precio" type="number" placeholder="Precio del producto">
+            <!--Boton para enviar la informacion ingresada del formulario POST-->
+            <button type="submit">Añadir</button>
+        </form>
 
-    <form id="formulario_actualizar">
-        <h2>Método PUT</h2>
-        <input id="actualizar_producto" type="text" placeholder="ID del producto">
-        <input id="actualizar_nombre" type="text" placeholder="Nuevo nombre del producto">
-        <input id="actualizar_precio" type="text" placeholder="Nuevo precio del producto">
-        <button type="submit">Actualizar</button>
-    </form>
+        <!--Formulario para actualizar productos-->
+        <form id="formulario_actualizar" onsubmit="return false">
+            <h2>Método PUT</h2>
+            <input id="actualizar_producto" type="text" placeholder="ID del producto">
+            <input id="actualizar_nombre" type="text" placeholder="Nuevo nombre del producto">
+            <input id="actualizar_precio" type="text" placeholder="Nuevo precio del producto">
+            <!--Boton para enviar la informacion ingresada del formulario PUT-->
+            <button type="submit">Actualizar</button>
+        </form>
 
+        <!--Formulario para eliminar productos-->
+        <form id="formulario_borrar">
+            <h2>Método DELETE</h2>
+            <input id="eliminar_producto" type="text" placeholder="ID del producto">
+            <button type="submit">Eliminar</button>
 
-    <form id="formulario_borrar">
-        <h2>Método DELETE</h2>
-        <input id="eliminar_producto" type="text" placeholder="ID del producto">
-        <button type="submit">Eliminar</button>
-
-    </form>
+        </form>
+    </main>
 </body>
 </html>
 <script src="./gestion_api.js"></script>

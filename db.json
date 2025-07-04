@@ -2,18 +2,18 @@
   "Productos": [
     {
       "id": "1",
-      "nombre": "Lapto",
-      "precio": 1500
+      "nombre": "Laptop",
+      "precio": 1512
     },
     {
       "id": "2",
-      "nombre": "Teclado",
-      "precio": 120
+      "nombre": "Mouse",
+      "precio": 255
     },
     {
       "id": "3",
-      "nombre": "Monitor",
-      "precio": 90
+      "nombre": "Teclado",
+      "precio": 5000
     }
   ]
 }
